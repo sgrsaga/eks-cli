@@ -26,6 +26,8 @@ kind: Service
 metadata:
   namespace: nginx
   name: service-myapp2
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-south-1:598792377165:certificate/3ae35aa3-101e-4a0e-99d6-626a057eb855
 spec:
   ports:
     - name: http
