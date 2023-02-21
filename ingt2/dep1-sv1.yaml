@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: myapp
     spec:
       containers:
-      - image: sgrsaga/mytestimage:yellow
+      - image: public.ecr.aws/q8n2d5o9/mytestimage:yellow
         imagePullPolicy: Always
         name: myapp
         ports:
