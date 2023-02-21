@@ -1,0 +1,49 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: nginx
+  name: ingress-eks-alb-https
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: instance
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:598792377165:certificate/3ae35aa3-101e-4a0e-99d6-626a057eb855
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+        - path: /yellow
+          pathType: Prefix
+          backend:
+            service:
+              name: service-myapp
+              port:
+                number: 80
+    - http:
+        paths:
+        - path: /green
+          pathType: Prefix
+          backend:
+            service:
+              name: service-myapp2
+              port:
+                number: 80
+    - https:
+        paths:
+        - path: /yellow
+          pathType: Prefix
+          backend:
+            service:
+              name: service-myapp
+              port:
+                number: 443
+    - https:
+        paths:
+        - path: /green
+          pathType: Prefix
+          backend:
+            service:
+              name: service-myapp2
+              port:
+                number: 443
