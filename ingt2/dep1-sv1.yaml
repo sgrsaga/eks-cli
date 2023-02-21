@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: myapp
     spec:
       containers:
-      - image: nginx
+      - image: sgrsaga/mytestimage:yellow
         imagePullPolicy: Always
         name: myapp
         ports:
