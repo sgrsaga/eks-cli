@@ -30,7 +30,7 @@ spec:
               name: service-myapp2
               port:
                 number: 80
-    - https:
+    - http:
         paths:
         - path: /yellow
           pathType: Prefix
@@ -39,7 +39,7 @@ spec:
               name: service-myapp
               port:
                 number: 443
-    - https:
+    - http:
         paths:
         - path: /green
           pathType: Prefix
