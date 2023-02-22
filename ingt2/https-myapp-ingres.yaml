@@ -16,14 +16,14 @@ spec:
   rules:
     - http:
         paths:
-        - path: /yellow/*
+        - path: /yellow
           pathType: Prefix
           backend:
             service:
               name: service-myapp
               port:
                 number: 80
-        - path: /green/*
+        - path: /green
           pathType: Prefix
           backend:
             service:
