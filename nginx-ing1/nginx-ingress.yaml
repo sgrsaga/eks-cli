@@ -6,13 +6,13 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: 
+  - host:
     http:
-      paths:
-      - backend:
-          service:
-            name: mynginx-svc
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
+       paths:
+          - path: /
+            pathType: Prefix
+            backend:
+               service:
+                  name: mynginx-svc
+                  port: 
+                    number: 80
